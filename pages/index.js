@@ -28,7 +28,7 @@ export default function Home(props) {
         <title>{siteTitle}</title>
       </Head>
       <section className={utilStyles.headingMd}>
-        <p>[Rab is a chocolate monster]</p>
+        <p>[Rab is a chocolate monster who also likes cheese]</p>
         <p>
           (This is a template sample that is awesome - You can modify and
           sutomide this)
