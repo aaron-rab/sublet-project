@@ -69,7 +69,7 @@
     font-size: 18px; /* Increased font size */
     border-radius: 5px; /* Slight rounding for button corners */
     transition: background-color 0.3s ease; /* Smooth hover effect */
-    white-space: nowrap;
+    white-space: inherit;
 }
 
 .flexContainer {
