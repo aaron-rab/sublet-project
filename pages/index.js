@@ -23,17 +23,38 @@ export default function Home(props) {
     console.log("allPostsData:", props.allPostsData);
   }
   return (
-    <Layout home>
+    <Layout landingPg>
       <Head>
         <title>{siteTitle}</title>
       </Head>
-      <section className={utilStyles.headingMd}>
-        <p>[Rab is a chocolate monster who also likes cheese]</p>
-        <p>
-          (This is a template sample that is awesome - You can modify and
-          sutomide this)
+      <section
+        className={`${utilStyles.headingMd} ${utilStyles.padding1px} ${utilStyles.center}`}
+      >
+        <h2 className={utilStyles.headingLg}>
+          Matching Subletters With Tentants at College Campuses
+        </h2>
+        <p className={`${utilStyles.padding25px}`}>How can we help you?</p>
+
+        <div class={`${utilStyles.padding25px} ${utilStyles.flexContainer}`}>
+          <Link href="/posts/ssg-ssr">
+            <button class={utilStyles.bigButton}>
+              I'm subletting and need to find a tenant
+            </button>
+          </Link>
+          <Link href="/posts/ssg-ssr">
+            <button class={utilStyles.bigButton}>
+              I'm looking for a sublet or lease
+            </button>
+          </Link>
+        </div>
+
+        <p class={utilStyles.padding25px}>We will find you what you want</p>
+        <p class={`${utilStyles.lightText} `}>
+          Made by a Drexel Student that understands the difficulty of the
+          subletting process
         </p>
       </section>
+
       <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
         <h2 className={utilStyles.headingLg}>Blog</h2>
         <ul className={utilStyles.list}>
