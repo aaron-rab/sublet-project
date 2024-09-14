@@ -4,6 +4,7 @@ import Head from "next/head";
 import utilStyles from "../styles/utils.module.css";
 import Layout, { siteTitle } from "../components/layout";
 import { getSortedPostsData } from "../lib/posts";
+import Tester from "../components/tester";
 
 // The function is async because we are getting data
 export async function getStaticProps() {
@@ -24,9 +25,11 @@ export default function Home(props) {
   }
   return (
     <Layout landingPg>
+
       <Head>
         <title>{siteTitle}</title>
       </Head>
+      <Tester />
       <section
         className={`${utilStyles.headingMd} ${utilStyles.padding1px} ${utilStyles.center}`}
       >

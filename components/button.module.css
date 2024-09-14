@@ -1,0 +1,11 @@
+.bigButton {
+    background-color: #e0e0e0;
+    border: none;
+    padding: 15px 40px; /* Increased padding */
+    margin: 15px; /* Increased margin for better spacing */
+    cursor: pointer;
+    font-size: 18px; /* Increased font size */
+    border-radius: 5px; /* Slight rounding for button corners */
+    transition: background-color 0.3s ease; /* Smooth hover effect */
+    white-space: inherit;
+}
