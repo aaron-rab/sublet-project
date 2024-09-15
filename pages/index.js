@@ -51,6 +51,24 @@ export default function Home(props) {
           </Link>
         </div>
 
+        <div class={`${utilStyles.padding25px} ${utilStyles.flexContainer}`}>
+          <Link href="/register">
+            <button class={utilStyles.bigButton}>
+              Register
+            </button>
+          </Link>
+          <Link href="/login">
+            <button class={utilStyles.bigButton}>
+              Login
+            </button>
+          </Link>
+          <Link href="/createPost">
+            <button class={utilStyles.bigButton}>
+              Create Listing
+            </button>
+          </Link>
+        </div>
+
         <p class={utilStyles.padding25px}>We will find you what you want</p>
         <p class={`${utilStyles.lightText} `}>
           Made by a Drexel Student that understands the difficulty of the

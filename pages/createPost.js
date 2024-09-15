@@ -1,5 +1,10 @@
 import CreatePostForm from "../components/createPostForm";
+import Layout from "../components/layout";
 
 export default function CreatePost() {
-    return <CreatePostForm />
+  return (
+    <Layout>
+      <CreatePostForm />
+    </Layout>
+  );
 }

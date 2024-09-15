@@ -4,7 +4,7 @@ import Image from "next/image";
 import utilStyles from "../styles/utils.module.css";
 import Link from "next/link";
 
-const name = "Rab";
+const name = "Subletto";
 export const siteTitle = "Next.js Sample Project";
 
 // children is everything that is between the layout tags
@@ -49,21 +49,12 @@ export default function Layout({ children, landingPg }) {
           </>
         ) : (
           <>
-            <Link href="/">
-              <Image
-                priority
-                src="/images/profile.jpg"
-                className={utilStyles.borderCircle}
-                height={128}
-                width={128}
-                alt=""
-              />
-            </Link>
-            <h2 className={utilStyles.headingLg}>
+            
+            <h1 className={utilStyles.headingLg}>
               <Link href="/" className={utilStyles.colorInhereit}>
                 {name}
               </Link>
-            </h2>
+            </h1>
           </>
         )}
       </header>
