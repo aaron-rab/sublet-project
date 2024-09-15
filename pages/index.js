@@ -41,13 +41,15 @@ export default function Home(props) {
         <div class={`${utilStyles.padding25px} ${utilStyles.flexContainer}`}>
           <Link href="/">
             <button class={utilStyles.bigButton}>
-              I'm subletting and need to find a tenant
+              I'm subletting
             </button>
+            
           </Link>
           <Link href="/">
             <button class={utilStyles.bigButton}>
-              I'm looking for a sublet or lease
+            Looking for a sublet
             </button>
+            
           </Link>
         </div>
 
