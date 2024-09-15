@@ -20,7 +20,7 @@ export default async function handler(req, res) {
         
         // seperates password from user object, and sends to client
         const { password: hashedPassword, ...result } = user;
-        res.status(201).json({ result }, { status: 201 });
+        res.status(201).json({ result , status: 201 });
         return 
 
     }

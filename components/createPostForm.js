@@ -29,6 +29,7 @@ export default function CreatePostForm() {
         .then(res => {
             if (res.status === 201) {
                 clearInputs();
+                setError("Listing Created")
             }
             else {
                 setError(res.message);
@@ -62,7 +63,7 @@ export default function CreatePostForm() {
                 type="submit"
                 className="border rounded-lg px-6 py-2 bg-gray-100 hover:bg-gray-200 duration-300 uppercase text-sm"
             >
-                Create Post
+                Create Listing
             </button>
             {error &&
                 <p className="text-red-500 font-bold text-center">

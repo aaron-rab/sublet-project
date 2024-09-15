@@ -13,13 +13,14 @@ export default function RegisterForm() {
     const clearInputs = () => {
         setEmail("");
         setPassword("");
-        setError("");
+        setError("Successfully Registered");
     }
     
     const handleSubmit = async (e) => {
         e.preventDefault();
         registerUser(email, password)
         .then(res => {
+            console.log("RES :", res)
             if (res.status === 201) {
                 clearInputs();
             }

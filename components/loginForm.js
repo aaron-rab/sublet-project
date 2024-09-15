@@ -29,6 +29,7 @@ export default function LoginForm() {
                 }
                 else {
                     clearInputs();
+                    setError("You are Logged In")
                 }
             })
             .catch(e => console.error(e))

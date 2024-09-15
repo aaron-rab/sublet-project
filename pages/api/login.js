@@ -23,7 +23,7 @@ export default async function handler(req, res) {
         if (await bcrypt.compare(password, user.password)) {
             const { password: hashedPasswrod, ...result } = user;
             const accessToken = signJwtAccessToken(result);
-            res.status(200).json({ result: { ...result, accessToken } }, { status: 200 })
+            res.status(200).json({ result: { ...result, accessToken } , status: 200 })
             return
         }
         else {
