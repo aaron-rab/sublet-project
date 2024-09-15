@@ -48,14 +48,14 @@ export default function CreatePostForm() {
                 type="text"
                 value={title}
                 onChange={handleTitleChange}
-                placeholder="Enter your email address"
+                placeholder="Enter Post Title"
                 className="border-b border-b-gray-200 hover:border-b-gray-500"
             />
             <input
                 type="password"
                 value={content}
                 onChange={handleContentChange}
-                placeholder="Enter your password"
+                placeholder="Enter Post Content"
                 className="border-b border-b-gray-200 hover:border-b-gray-500"
             />
             <button
