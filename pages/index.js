@@ -62,7 +62,11 @@ export default function Home(props) {
               Login
             </button>
           </Link>
-          <Link href="/createPost">
+          
+        </div>
+        
+        <div class={`${utilStyles.padding25px} ${utilStyles.flexContainer}`}>
+        <Link href="/createPost">
             <button class={utilStyles.bigButton}>
               Create Listing
             </button>
