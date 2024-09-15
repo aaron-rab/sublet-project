@@ -1,6 +1,6 @@
 export const getAllPosts = () => {
     return new Promise((resolve, reject) => {
-        fetch(`${process.env.HOST_URL}/api/getUserPosts`, {
+        fetch(`/api/getUserPosts`, {
             method: 'GET',
             headers: {
                 "Accept": "application/json",
