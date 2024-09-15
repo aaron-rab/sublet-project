@@ -23,7 +23,7 @@ export default function Layout({ children, landingPg }) {
           name="description"
           content="Sublets Leases at near Drexel Philadelphia"
         />
-        <meta property="og:image" content={`/logo.png`} />
+        <meta property="og:image" content={`/ogIndexImg.png`} />
         <meta name="og:title" content={siteTitle} />
         <meta name="twitter:card" contnet="summary_large_image" />
       </Head>
