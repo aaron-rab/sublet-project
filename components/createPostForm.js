@@ -52,7 +52,7 @@ export default function CreatePostForm() {
                 className="border-b border-b-gray-200 hover:border-b-gray-500"
             />
             <input
-                type="password"
+                type="text"
                 value={content}
                 onChange={handleContentChange}
                 placeholder="Enter Post Content"

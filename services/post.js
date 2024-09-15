@@ -1,11 +1,10 @@
 export const getAllPosts = () => {
     return new Promise((resolve, reject) => {
-        fetch(`/api/getPosts`, {
+        fetch(`${process.env.HOST_URL}/api/getUserPosts`, {
             method: 'GET',
             headers: {
                 "Accept": "application/json",
                 "Content-Type": "application/json",
-                "Authorization": accessToken
             }
         })
             .then(res => {

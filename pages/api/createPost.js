@@ -16,13 +16,13 @@ export default async function handler(req, res) {
         const decoded = verifyJwt(accessToken);
 
         if (!accessToken || !decoded) {
-            res.status(401).json({ message: "You are not authorized to make a post" }, { status: 401 })
+            res.status(401).json({ message: "You are not authorized to make a post. Make sure to Login." }, { status: 401 })
             return
             
         }
 
         const userId = decoded.id
-        
+
         const post = await prisma.post.create({
             data: {
                 title: title,

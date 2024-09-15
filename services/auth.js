@@ -2,7 +2,7 @@
 
 export const registerUser = (email, password) => {
     return new Promise((resolve, reject) => {
-        fetch('/api/register', {
+        fetch(`/api/register`, {
             method: 'POST',
             body: JSON.stringify({ email, password }),
             headers: {

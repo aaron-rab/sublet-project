@@ -39,12 +39,12 @@ export default function Home(props) {
         <p className={`${utilStyles.padding25px}`}>How can we help you?</p>
 
         <div class={`${utilStyles.padding25px} ${utilStyles.flexContainer}`}>
-          <Link href="/posts/ssg-ssr">
+          <Link href="/">
             <button class={utilStyles.bigButton}>
               I'm subletting and need to find a tenant
             </button>
           </Link>
-          <Link href="/posts/ssg-ssr">
+          <Link href="/">
             <button class={utilStyles.bigButton}>
               I'm looking for a sublet or lease
             </button>
@@ -64,13 +64,18 @@ export default function Home(props) {
           </Link>
           
         </div>
-        
+
         <div class={`${utilStyles.padding25px} ${utilStyles.flexContainer}`}>
         <Link href="/createPost">
             <button class={utilStyles.bigButton}>
               Create Listing
             </button>
-          </Link>
+        </Link>
+        <Link href="/allPosts">
+            <button class={utilStyles.bigButton}>
+              View Listings
+            </button>
+        </Link>
         </div>
 
         <p class={utilStyles.padding25px}>We will find you what you want</p>
