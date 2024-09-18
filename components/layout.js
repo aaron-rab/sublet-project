@@ -31,7 +31,7 @@ export default function Layout({ children, landingPg }) {
         {landingPg ? (
           <>
             <div class="logo">
-              <h1 className={styles.logoText}>Linda</h1>
+              <h1 className={styles.logoText}>Subletto</h1>
               
               <select>
                   <option>Drexel</option>
