@@ -3,6 +3,7 @@ import Head from "next/head";
 import Image from "next/image";
 import utilStyles from "../styles/utils.module.css";
 import Link from "next/link";
+import ReactQueryProvider from "../helpers/providers/ReactQueryProvider";
 
 const name = "Subletto";
 export const siteTitle = "Next.js Sample Project";
@@ -27,6 +28,7 @@ export default function Layout({ children, landingPg }) {
         <meta name="og:title" content={siteTitle} />
         <meta name="twitter:card" contnet="summary_large_image" />
       </Head>
+      <ReactQueryProvider>
       <header className={styles.header}>
         {landingPg ? (
           <>
@@ -64,6 +66,7 @@ export default function Layout({ children, landingPg }) {
           <Link href="/">Back to home</Link>
         </div>
       )}
+      </ReactQueryProvider>
     </div>
   );
 }
