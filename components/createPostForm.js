@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import { useSession } from 'next-auth/react';
 import { createPost } from '../services/post';
+import { useMutation } from '@tanstack/react-query';
 
 export default function CreatePostForm() {
 
@@ -20,11 +21,21 @@ export default function CreatePostForm() {
         setError("");
     }
     
+       
+    const { mutateAsync } = useMutation({
+        mutationFn: (newTodo) => {
+            return createPost(newTodo)
+        },
+    })
+
     const handleSubmit = async (e) => {
         e.preventDefault();
-        const post = await createPost(session?.user.accessToken, {
-            title: title,
-            content: content
+        const post = await mutateAsync({
+            accessToken: session?.user.accessToken,
+            postData: {
+                title: title,
+                content: content,
+            },
         })
         .then(res => {
             if (res.status === 201) {
@@ -40,6 +51,7 @@ export default function CreatePostForm() {
         })
     }
  
+
     return (
         <form
             onSubmit={handleSubmit}
@@ -73,3 +85,4 @@ export default function CreatePostForm() {
         </form>
     )
 }
+

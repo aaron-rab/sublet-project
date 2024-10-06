@@ -29,43 +29,42 @@ export default function Layout({ children, landingPg }) {
         <meta name="twitter:card" contnet="summary_large_image" />
       </Head>
       <ReactQueryProvider>
-      <header className={styles.header}>
-        {landingPg ? (
-          <>
-            <div class="logo">
-              <h1 className={styles.logoText}>Subletto</h1>
-              
-              <select>
+        <header className={styles.header}>
+          {landingPg ? (
+            <>
+              <div class="logo">
+                <h1 className={styles.logoText}>Subletto</h1>
+
+                <select>
                   <option>Drexel</option>
-              </select>
+                </select>
+              </div>
+
+              <Image
+                priority
+                src="/logo.png"
+                className={utilStyles.logo}
+                height={128}
+                width={128}
+                alt=""
+              />
+            </>
+          ) : (
+            <>
+              <h1 className={utilStyles.headingLg}>
+                <Link href="/" className={utilStyles.colorInhereit}>
+                  {name}
+                </Link>
+              </h1>
+            </>
+          )}
+        </header>
+        <main>{children}</main>
+        {!landingPg && (
+          <div className={styles.backToHome}>
+            <Link href="/">Back to home</Link>
           </div>
-            
-            <Image
-              priority
-              src="/logo.png"
-              className={utilStyles.logo}
-              height={128}
-              width={128}
-              alt=""
-            />
-          </>
-        ) : (
-          <>
-            
-            <h1 className={utilStyles.headingLg}>
-              <Link href="/" className={utilStyles.colorInhereit}>
-                {name}
-              </Link>
-            </h1>
-          </>
         )}
-      </header>
-      <main>{children}</main>
-      {!landingPg && (
-        <div className={styles.backToHome}>
-          <Link href="/">Back to home</Link>
-        </div>
-      )}
       </ReactQueryProvider>
     </div>
   );
