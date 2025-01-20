@@ -5,6 +5,7 @@ import utilStyles from "../styles/utils.module.css";
 import Layout, { siteTitle } from "../components/layout";
 import { getSortedPostsData } from "../lib/posts";
 import Tester from "../components/tester";
+import BigButton from "../components/bigButton";
 
 // The function is async because we are getting data
 // Gets blog post data
@@ -36,23 +37,14 @@ export default function Home(props) {
       <section
         className={`p-1 text-center`}
       >
-        <h2 className={'p-1 text-2xl mt-5 font-Lato font-semibold'}>
+        <h2 className={'p-1 text-2xl mt-8 font-Lato font-semibold'}>
           Matching Subletters With Tentants at College Campuses
         </h2>
-        <p className={'p-1 mt-9 text-lg'}>How can we help you?</p>
+        <p className={'p-1 mt-9 text-lg font-Roboto'}>How can we help you?</p>
 
-        <div class={`flex justify-around mt-8`}>
-          <Link href="/">
-            <button class={"px-9 py-10 bg-slate-300 hover:bg-slate-400 rounded-md text-xl sm:w-40 md:w-72 lg:w-72 sm:h-36 w-font-Lato font-light shadow-lg"}>
-              I'M SUBLETTING
-            </button>
-          </Link>
-
-          <Link href="/">
-            <button class={"px-9 py-10 bg-slate-300  hover:bg-slate-400 rounded-md text-xl sm:w-40 md:w-72 lg:w-72 sm:h-36 hfont-Lato font-light shadow-lg"}>
-            LOOKING FOR SUBLET
-            </button>
-          </Link>
+        <div class={`flex justify-center mt-8 gap-9 md:gap-20 xl:gap-72`}>
+          <BigButton href={"/"} text={"I'M SUBLETTING"}/> 
+          <BigButton href={"/"} text={"LOOKING FOR SUBLET"}/>
         </div>
 
         
@@ -62,13 +54,9 @@ export default function Home(props) {
           Made by a Drexel Student that understands the difficulty of the
           subletting process
         </p>
-
-
-
-
-      
       </section>
-
+      
+      {/*  BLOG POSTS
       <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
         <h2 className={utilStyles.headingLg}>Blog</h2>
         <ul className={utilStyles.list}>
@@ -83,7 +71,7 @@ export default function Home(props) {
           ))}
         </ul>
       </section>
-   
+    */}
 
 
      {/* Here temporarily */}
