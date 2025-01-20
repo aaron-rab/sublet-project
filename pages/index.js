@@ -44,7 +44,7 @@ export default function Home(props) {
 
         <div class={`flex justify-center mt-8 gap-9 md:gap-20 xl:gap-40 lg:mt-14`}>
           <BigButton href={"/"} text={"I'M SUBLETTING"}/> 
-          <BigButton href={"/"} text={"LOOKING FOR SUBLET"}/>
+          <BigButton href={"/allPosts"} text={"LOOKING FOR SUBLET"}/>
         </div>
 
         

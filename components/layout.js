@@ -88,7 +88,7 @@ export default function Layout({ children, landingPg }) {
         <main>{children}</main>
         {!landingPg && (
           <div className={styles.backToHome}>
-            <Link href="/">Back to home</Link>
+            <Link href="/" className="text-3xl">Back to home</Link>
           </div>
         )}
       </ReactQueryProvider>
