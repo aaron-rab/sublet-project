@@ -1,7 +1,6 @@
 import { getAllPosts } from "../services/post";
-import { useState, useEffect } from "react";
-import utilStyles from "../styles/utils.module.css";
 import { useQuery } from "@tanstack/react-query";
+import Post from "./post";
 
 export default function PostList() {
 
@@ -14,14 +13,11 @@ export default function PostList() {
   if (isError) return <div>Sorry There was an Error</div>;
 
   return (
-    <ul className={`${utilStyles.center} ${utilStyles.headingMd}`}>
+    <ul>
       {data?.posts?.map((post) => (
         <li key={post.id}>
-          <div>
-            <h2>{post.title}</h2>
-            <p>{post.content}</p>
-          </div>
-        </li>
+         <Post postData={{title: post.title, content: post.content}} />
+        </li> 
       ))}
     </ul>
   );

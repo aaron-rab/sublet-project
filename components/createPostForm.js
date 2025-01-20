@@ -51,7 +51,8 @@ export default function CreatePostForm() {
         })
     }
  
-
+    // So I want to make input fields their own component. IS this necesarry? 
+    // It could make things more modular
     return (
         <form
             onSubmit={handleSubmit}

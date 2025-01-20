@@ -7,6 +7,7 @@ import { getSortedPostsData } from "../lib/posts";
 import Tester from "../components/tester";
 
 // The function is async because we are getting data
+// Gets blog post data
 export async function getStaticProps() {
   const allPostsData = getSortedPostsData();
   return {
@@ -21,7 +22,7 @@ export async function getStaticProps() {
 // props to make sure that I understand what going on
 export default function Home(props) {
   {
-    console.log("allPostsData:", props.allPostsData);
+    //console.log("allPostsData:", props.allPostsData);
   }
   return (
     <Layout landingPg>
@@ -30,37 +31,70 @@ export default function Home(props) {
         <title>{siteTitle}</title>
       </Head>
       <Tester />
+
+      {/* should make default heading styles in tailwind ${utilStyles.headingMd} ${utilStyles.padding1px} ${utilStyles.center}*/}
       <section
-        className={`${utilStyles.headingMd} ${utilStyles.padding1px} ${utilStyles.center}`}
+        className={`p-1 text-center`}
       >
-        <h2 className={utilStyles.headingLg}>
+        <h2 className={'p-1 text-2xl mt-5 font-Lato font-semibold'}>
           Matching Subletters With Tentants at College Campuses
         </h2>
-        <p className={`${utilStyles.padding25px}`}>How can we help you?</p>
+        <p className={'p-1 mt-9 text-lg'}>How can we help you?</p>
 
-        <div class={`${utilStyles.padding25px} ${utilStyles.flexContainer}`}>
+        <div class={`flex justify-around mt-8`}>
           <Link href="/">
-            <button class={utilStyles.bigButton}>
-              I'm subletting
+            <button class={"px-9 py-10 bg-slate-300 hover:bg-slate-400 rounded-md text-xl w-72 font-Lato font-light shadow-lg"}>
+              I'M SUBLETTING
             </button>
-            
           </Link>
+
           <Link href="/">
-            <button class={utilStyles.bigButton}>
-            Looking for a sublet
+            <button class={"px-9 py-10 bg-slate-300  hover:bg-slate-400 rounded-md text-xl w-72 font-Lato font-light shadow-lg"}>
+            LOOKING FOR SUBLET
             </button>
-            
           </Link>
         </div>
 
-        <div class={`${utilStyles.padding25px} ${utilStyles.flexContainer}`}>
+        
+
+        <p class={"p-5 mt-8 text-lg"}>We will find you what you want</p>
+        <p class={`text-lg text-lightText`}>
+          Made by a Drexel Student that understands the difficulty of the
+          subletting process
+        </p>
+
+
+
+
+      
+      </section>
+
+      <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
+        <h2 className={utilStyles.headingLg}>Blog</h2>
+        <ul className={utilStyles.list}>
+          {props.allPostsData.map(({ id, date, title }) => (
+            <li className={utilStyles.listItem} key={id}>
+              <Link href={`/posts/${id}`}>{title}</Link>
+              <br />
+              <small className={utilStyles.lightTest}>
+                <Date dateString={date} />
+              </small>
+            </li>
+          ))}
+        </ul>
+      </section>
+   
+
+
+     {/* Here temporarily */}
+      <div class={`flex justify-evenly mt-40`}>
           <Link href="/register">
-            <button class={utilStyles.bigButton}>
+            <button class={"px-9 py-5 bg-slate-300 rounded-md text-xl"}>
               Register
             </button>
           </Link>
           <Link href="/login">
-            <button class={utilStyles.bigButton}>
+            <button class={"px-9 py-5 bg-slate-300 rounded-md text-xl"}>
               Login
             </button>
           </Link>
@@ -79,28 +113,6 @@ export default function Home(props) {
             </button>
         </Link>
         </div>
-
-        <p class={utilStyles.padding25px}>We will find you what you want</p>
-        <p class={`${utilStyles.lightText} `}>
-          Made by a Drexel Student that understands the difficulty of the
-          subletting process
-        </p>
-      </section>
-
-      <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
-        <h2 className={utilStyles.headingLg}>Blog</h2>
-        <ul className={utilStyles.list}>
-          {props.allPostsData.map(({ id, date, title }) => (
-            <li className={utilStyles.listItem} key={id}>
-              <Link href={`/posts/${id}`}>{title}</Link>
-              <br />
-              <small className={utilStyles.lightTest}>
-                <Date dateString={date} />
-              </small>
-            </li>
-          ))}
-        </ul>
-      </section>
-    </Layout>
+  </Layout>
   );
 }

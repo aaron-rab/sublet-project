@@ -11,10 +11,10 @@ import PostList from "../components/postList";
 //     }
 // }
 
-export default function AllPosts({posts}) {
-    return (
-        <Layout>
-            <PostList />
-        </Layout>
-    )
+export default function AllPosts({ posts }) {
+  return (
+    <Layout>
+      <PostList />
+    </Layout>
+  );
 }

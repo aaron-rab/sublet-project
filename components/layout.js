@@ -17,7 +17,7 @@ export default function Layout({ children, landingPg }) {
   //we return everything that is between the Layout tags as the children.
   //the children are passed in the bottom in the main tag
   return (
-    <div className={styles.container}>
+    <div className="min-h-screen  bg-center bg-cover">
       <Head>
         <link rel="icon" href="/logo.png" />
         <meta
@@ -29,25 +29,22 @@ export default function Layout({ children, landingPg }) {
         <meta name="twitter:card" contnet="summary_large_image" />
       </Head>
       <ReactQueryProvider>
-        <header className={styles.header}>
+        <header>
           {landingPg ? (
             <>
-              <div class="logo">
-                <h1 className={styles.logoText}>Subletto</h1>
-
-                <select>
-                  <option>Drexel</option>
-                </select>
-              </div>
-
-              <Image
-                priority
-                src="/logo.png"
-                className={utilStyles.logo}
-                height={128}
-                width={128}
-                alt=""
-              />
+              <nav className="flex items-center">
+                <h1 className="">Subletto</h1>
+                <ul>
+                  <li><Link href="/"></Link></li>
+                </ul>
+                <Image
+                  priority
+                  src="/logo.png"
+                  height={128}
+                  width={128}
+                  alt=""
+                />
+              </nav>
             </>
           ) : (
             <>
