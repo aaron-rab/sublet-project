@@ -16,6 +16,7 @@ module.exports = {
         },
         fontFamily: {
           'Lato': ['Lato', 'serif'],
+          'Roboto': ['Roboto', 'serif'],
         },
       },
     },
