@@ -4,6 +4,7 @@ import Image from "next/image";
 import utilStyles from "../styles/utils.module.css";
 import Link from "next/link";
 import ReactQueryProvider from "../helpers/providers/ReactQueryProvider";
+import Logo from "./logo";
 
 const name = "Subletto";
 export const siteTitle = "Next.js Sample Project";
@@ -27,37 +28,60 @@ export default function Layout({ children, landingPg }) {
         <meta property="og:image" content={`/ogIndexImg.png`} />
         <meta name="og:title" content={siteTitle} />
         <meta name="twitter:card" contnet="summary_large_image" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0"></meta>
+        <meta
+          name="viewport"
+          content="width=device-width, initial-scale=1.0"
+        ></meta>
       </Head>
       <ReactQueryProvider>
         <header>
           {landingPg ? (
             <>
-            <div className="bg-gray-400 h-32 lg:h-44 ">
-              <nav className="flex-col justify-evenly items-center ml-5 lg:ml-5">
-                
-                <ul>
-                  <li><Link href="/"></Link></li>
-                </ul>
-                <Image
-                  priority
-                  src="/logo.png"
-                  height={128}
-                  width={128}
-                  alt=""
-                  className="w-24 lg:w-32"
-                />
-                <h1 className="font-Lato text-2xl lg:text-4xl -mt-3">Subletto</h1>
-              </nav>
+              <div className="bg-gray-400 h-32 lg:h-44 ">
+                <div className="flex-col justify-evenly items-center ml-5 lg:ml-5">
+                  <ul>
+                    <li>
+                      <Link href="/"></Link>
+                    </li>
+                  </ul>
+                  <Image
+                    priority
+                    src="/logo.png"
+                    height={128}
+                    width={128}
+                    alt=""
+                    className={`w-24 lg:w-32`}
+                  />
+                  <h1 className="font-Lato text-2xl lg:text-4xl -mt-3">
+                    {name}
+                  </h1>
+                </div>
               </div>
             </>
           ) : (
             <>
-              <h1 className={utilStyles.headingLg}>
-                <Link href="/" className={utilStyles.colorInhereit}>
-                  {name}
+              <div className="bg-gray-400 h-28 lg:h-32 ">
+                <Link href="/">
+                  <div className="flex-col justify-evenly items-center ml-7 lg:ml-12">
+                    <ul>
+                      <li>
+                        <Link href="/"></Link>
+                      </li>
+                    </ul>
+                    <Image
+                      priority
+                      src="/logo.png"
+                      height={128}
+                      width={128}
+                      alt=""
+                      className={`w-20 lg:w-24`}
+                    />
+                    <h1 className="font-Lato text-xl lg:text-3xl -mt-3 lg:-ml-2">
+                      {name}
+                    </h1>
+                  </div>
                 </Link>
-              </h1>
+              </div>
             </>
           )}
         </header>
