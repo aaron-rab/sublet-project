@@ -33,29 +33,33 @@ export default function Home(props) {
       </Head>
       <Tester />
 
-      {/* should make default heading styles in tailwind ${utilStyles.headingMd} ${utilStyles.padding1px} ${utilStyles.center}*/}
+      {/* should make default heading styles in tailwind */}
       <section
         className={`p-1 text-center`}
       >
-        <h2 className={'p-1 text-2xl mt-8 font-Lato font-semibold'}>
-          Matching Subletters With Tentants at College Campuses
+        <h2 className={'p-1 text-2xl mt-8 lg:mt-16 font-Lato font-normal lg:text-3xl'}>
+          MATCHING SUBLETTERS WITH TENANTS AT COLLEGE CAMPUSES
         </h2>
-        <p className={'p-1 mt-9 text-lg font-Roboto'}>How can we help you?</p>
+        <p className={'p-1 mt-9 lg:mt-16 text-lg font-Roboto lg:text-2xl'}>How can we help you?</p>
 
-        <div class={`flex justify-center mt-8 gap-9 md:gap-20 xl:gap-72`}>
+        <div class={`flex justify-center mt-8 gap-9 md:gap-20 xl:gap-40 lg:mt-14`}>
           <BigButton href={"/"} text={"I'M SUBLETTING"}/> 
           <BigButton href={"/"} text={"LOOKING FOR SUBLET"}/>
         </div>
 
         
 
-        <p class={"p-5 mt-8 text-lg"}>We will find you what you want</p>
-        <p class={`text-lg text-lightText`}>
+        <p class={"p-5 mt-8 text-lg lg:mt-20 lg:text-2xl font-Lato"}>We will find you what you want</p>
+        <p class={`text-lg text-lightText font-Roboto`}>
           Made by a Drexel Student that understands the difficulty of the
           subletting process
         </p>
       </section>
-      
+
+      <section className="bg-gray-300 h-96 mt-16">
+
+      </section>
+
       {/*  BLOG POSTS
       <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
         <h2 className={utilStyles.headingLg}>Blog</h2>

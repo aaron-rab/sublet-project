@@ -33,8 +33,9 @@ export default function Layout({ children, landingPg }) {
         <header>
           {landingPg ? (
             <>
-              <nav className="flex items-center">
-                <h1 className="">Subletto</h1>
+            <div className="bg-gray-400 h-32 lg:h-44 ">
+              <nav className="flex-col justify-evenly items-center ml-5 lg:ml-5">
+                
                 <ul>
                   <li><Link href="/"></Link></li>
                 </ul>
@@ -44,8 +45,11 @@ export default function Layout({ children, landingPg }) {
                   height={128}
                   width={128}
                   alt=""
+                  className="w-24 lg:w-32"
                 />
+                <h1 className="font-Lato text-2xl lg:text-4xl -mt-3">Subletto</h1>
               </nav>
+              </div>
             </>
           ) : (
             <>
