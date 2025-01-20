@@ -27,6 +27,7 @@ export default function Layout({ children, landingPg }) {
         <meta property="og:image" content={`/ogIndexImg.png`} />
         <meta name="og:title" content={siteTitle} />
         <meta name="twitter:card" contnet="summary_large_image" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"></meta>
       </Head>
       <ReactQueryProvider>
         <header>

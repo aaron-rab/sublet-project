@@ -43,13 +43,13 @@ export default function Home(props) {
 
         <div class={`flex justify-around mt-8`}>
           <Link href="/">
-            <button class={"px-9 py-10 bg-slate-300 hover:bg-slate-400 rounded-md text-xl w-72 md:w-52 w-font-Lato font-light shadow-lg"}>
+            <button class={"px-9 py-10 bg-slate-300 hover:bg-slate-400 rounded-md text-xl sm:w-40 md:w-72 lg:w-72 sm:h-36 w-font-Lato font-light shadow-lg"}>
               I'M SUBLETTING
             </button>
           </Link>
 
           <Link href="/">
-            <button class={"px-9 py-10 bg-slate-300  hover:bg-slate-400 rounded-md text-xl w-72 md:w-52 font-Lato font-light shadow-lg"}>
+            <button class={"px-9 py-10 bg-slate-300  hover:bg-slate-400 rounded-md text-xl sm:w-40 md:w-72 lg:w-72 sm:h-36 hfont-Lato font-light shadow-lg"}>
             LOOKING FOR SUBLET
             </button>
           </Link>

@@ -18,6 +18,7 @@ module.exports = {
           'Lato': ['Lato', 'serif'],
           'Roboto': ['Roboto', 'serif'],
         },
+        screens: { 'sm': { 'max': '640px' } },
       },
     },
     plugins: [],
