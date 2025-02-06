@@ -7,8 +7,7 @@ export default async function handler(req, res) {
         const { title, content } = req.body
 
         if (!title || !content) {
-            res.status(400).json({ message: "Both fields are required"}, { status: 400 })
-            return
+            return res.status(400).json({ message: "Both fields are required", status: 400 })
         }
         
         const accessToken = req.headers['authorization']
@@ -16,8 +15,7 @@ export default async function handler(req, res) {
         const decoded = verifyJwt(accessToken);
 
         if (!accessToken || !decoded) {
-            res.status(401).json({ message: "You are not authorized to make a post. Make sure to Login." }, { status: 401 })
-            return
+            return res.status(401).json({ message: "You are not authorized to make a post. Make sure to Login." , status: 401 })
             
         }
 
@@ -31,13 +29,11 @@ export default async function handler(req, res) {
             }
         })
 
-        res.status(201).json({ post , status: 201 });
-        return 
-
+        return res.status(201).json({ post , status: 201 });
+        
     }
     catch (e) {
         console.error(e);
-        res.status(500).json({ message: "Something went wrong while trying to create a post", result: e }, { status: 500 })
-        return 
+        return res.status(500).json({ message: "Something went wrong while trying to create a post", result: e, status: 500 })
     }
   }
