@@ -12,9 +12,8 @@ export default async function CreateAccountPrompt() {
         queryFn: getAllPosts,
         queryKey: ["posts"],
       });
-    const {loggedIn} = await mutateAsync();
 
-    if (loggedIn) {
+    if (data?.loggedIn) {
         console.log("LOGGED IN")
     } else {
         console.log("Not Logged In")
