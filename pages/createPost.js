@@ -12,7 +12,6 @@ export default function CreatePost() {
   return (
     <>
       <Layout>
-        <CreateAccountPrompt />
         <LoginForm />
         <RegisterForm />
         <CreatePostForm />
