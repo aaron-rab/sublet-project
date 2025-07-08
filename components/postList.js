@@ -16,7 +16,7 @@ export default function PostList() {
     <ul>
       {data?.posts?.map((post) => (
         <li key={post.id}>
-         <Post postData={{title: post.title, content: post.content}} />
+         <Post postData={{title: post.title, description: post.description}} />
         </li> 
       ))}
     </ul>

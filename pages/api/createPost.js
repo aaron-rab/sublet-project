@@ -4,10 +4,10 @@ import { verifyJwt } from "../../helpers/jwt";
 export default async function handler(req, res) {
     
     try {
-        const { title, content } = req.body
+        const { title, description, rent } = req.body
 
-        if (!title || !content) {
-            return res.status(400).json({ message: "Both fields are required", status: 400 })
+        if (!title || !description || !rent ) {
+            return res.status(400).json({ message: "All fields are required", status: 400 })
         }
         
         const accessToken = req.headers['authorization']
@@ -24,7 +24,8 @@ export default async function handler(req, res) {
         const post = await prisma.post.create({
             data: {
                 title: title,
-                content: content,
+                description: description,
+                rent: rent,
                 user_id: userId
             }
         })
