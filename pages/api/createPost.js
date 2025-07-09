@@ -4,10 +4,16 @@ import { verifyJwt } from "../../helpers/jwt";
 export default async function handler(req, res) {
     
     try {
-        const { title, description, rent } = req.body
+        const { title, description, rent, startDate, endDate } = req.body
 
-        if (!title || !description || !rent ) {
-            return res.status(400).json({ message: "All fields are required", status: 400 })
+        if (!title || !description || !rent || !startDate || !endDate) {
+            let missingFields = [];
+            if (!title) missingFields.push("title");
+            if (!description) missingFields.push("description");
+            if (!rent) missingFields.push("rent");
+            if (!startDate) missingFields.push("startDate");
+            if (!endDate) missingFields.push("endDate");
+            return res.status(400).json({ message: `Missing required field(s): ${missingFields.join(", ")}`, missingFields, status: 400 });
         }
         
         const accessToken = req.headers['authorization']
@@ -16,7 +22,6 @@ export default async function handler(req, res) {
 
         if (!accessToken || !decoded) {
             return res.status(401).json({ message: "You are not authorized to make a post. Make sure to Login." , status: 401 })
-            
         }
 
         const userId = decoded.id
@@ -25,7 +30,10 @@ export default async function handler(req, res) {
             data: {
                 title: title,
                 description: description,
-                rent: rent,
+                rent: parseInt(rent, 10),
+                startDate: startDate,
+                endDate: endDate,
+                creationDate: new Date(),
                 user_id: userId
             }
         })

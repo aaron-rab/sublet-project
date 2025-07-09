@@ -10,16 +10,22 @@ export default function CreatePostForm() {
   const { data: session } = useSession();
 
   const [title, setTitle] = useState("");
-  const [content, setContent] = useState("");
+  const [description, setDescription] = useState("");
   const [error, setError] = useState("");
-  const [date, setDate] = useState(null);
+  const [startDate, setStartDate] = useState(null);
+  const [endDate, setEndDate] = useState(null);
+  const [rent, setRent] = useState("");
 
   const handleTitleChange = (e) => setTitle(e.target.value);
-  const handleContentChange = (e) => setContent(e.target.value);
+  const handleDescriptionChange = (e) => setDescription(e.target.value);
+  const handleRentChange = (e) => setRent(e.target.value);
   const clearInputs = () => {
     setTitle("");
-    setContent("");
+    setDescription("");
+    setRent("");
     setError("");
+    setStartDate(null);
+    setEndDate(null);
   };
 
   const { mutateAsync } = useMutation({
@@ -34,7 +40,10 @@ export default function CreatePostForm() {
       accessToken: session?.user.accessToken,
       postData: {
         title: title,
-        content: content,
+        description: description,
+        startDate: startDate ? startDate.toDate() : null,
+        endDate: endDate ? endDate.toDate() : null,
+        rent: rent,
       },
     })
       .then((res) => {
@@ -52,6 +61,8 @@ export default function CreatePostForm() {
 
   // So I want to make input fields their own component. IS this necesarry?
   // It could make things more modular
+  // Custom handler to log date when set
+
   return (
     <form
       onSubmit={handleSubmit}
@@ -66,16 +77,29 @@ export default function CreatePostForm() {
       />
       <input
         type="text"
-        value={content}
-        onChange={handleContentChange}
-        placeholder="Enter Post Content"
+        value={description}
+        onChange={handleDescriptionChange}
+        placeholder="Enter Post Description"
+        className="border-b border-b-gray-200 hover:border-b-gray-500"
+      />
+      <input
+        type="text"
+        value={rent}
+        onChange={handleRentChange}
+        placeholder="Enter Rent Amount"
         className="border-b border-b-gray-200 hover:border-b-gray-500"
       />
 
-      <DatePicker onChange={setDate} placeholder="Select date" />
-      {date && (
+      <DatePicker onChange={setStartDate} placeholder="Start Date" />
+      <DatePicker onChange={setEndDate} placeholder="End Date" />
+      {startDate && (
         <div>
-          <p>Selected Date: {date.format('YYYY-MM-DD')}</p>
+          <p>Selected Start Date: {startDate.format('YYYY-MM-DD')}</p>
+        </div>
+      )}
+      {endDate && (
+        <div>
+          <p>Selected End Date: {endDate.format('YYYY-MM-DD')}</p>
         </div>
       )}
        
