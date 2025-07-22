@@ -1,5 +1,6 @@
 //import '../styles/global.css';
 import '../styles/tailwindglobal.css';
+import 'react-day-picker/dist/style.css';
 import { SessionProvider } from "next-auth/react";
 
 

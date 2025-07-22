@@ -5,7 +5,7 @@ import { useSession } from "next-auth/react";
 import { createPost } from "../services/post";
 import { useMutation } from "@tanstack/react-query";
 //import { DatePicker } from "antd";
-
+import { DayPicker } from 'react-day-picker';
 
 export default function CreatePostForm() {
   const { data: session } = useSession();
@@ -35,6 +35,8 @@ export default function CreatePostForm() {
     },
   });
 
+  const formatDate = (date) => date ? date.toISOString().slice(0, 10) : null;
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     const post = await mutateAsync({
@@ -42,8 +44,8 @@ export default function CreatePostForm() {
       postData: {
         title: title,
         description: description,
-        startDate: startDate ? startDate.toDate() : null,
-        endDate: endDate ? endDate.toDate() : null,
+        startDate: formatDate(startDate),
+        endDate: formatDate(endDate),
         rent: rent,
       },
     })
@@ -91,19 +93,23 @@ export default function CreatePostForm() {
         className="border-b border-b-gray-200 hover:border-b-gray-500"
       />
 
-      {/* <DatePicker onChange={setStartDate} placeholder="Start Date" />
-      <DatePicker onChange={setEndDate} placeholder="End Date" /> */}
-      {startDate && (
-        <div>
-          <p>Selected Start Date: {startDate.format('YYYY-MM-DD')}</p>
-        </div>
-      )}
-      {endDate && (
-        <div>
-          <p>Selected End Date: {endDate.format('YYYY-MM-DD')}</p>
-        </div>
-      )}
-       
+      <DayPicker
+        mode="range"
+        selected={startDate && endDate ? { from: startDate, to: endDate } : undefined}
+        onSelect={(range) => {
+          setStartDate(range?.from || null);
+          setEndDate(range?.to || null);
+          console.log("Selected range:", range);
+        }}
+        footer={
+          <div>
+            {startDate && endDate
+              ? `Selected: ${startDate.toLocaleDateString()} - ${endDate.toLocaleDateString()}`
+              : "Please select a date range"}
+          </div>
+        }
+      />
+
       <button
         type="submit"
         className="border rounded-lg px-6 py-2 bg-gray-100 hover:bg-gray-200 duration-300 uppercase text-sm"
