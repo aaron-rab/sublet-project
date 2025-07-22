@@ -4,10 +4,8 @@ import { useState } from "react";
 import { useSession } from "next-auth/react";
 import { createPost } from "../services/post";
 import { useMutation } from "@tanstack/react-query";
-import { DatePicker } from "antd";
-import dayjs from 'dayjs';
-import weekday from 'dayjs/plugin/weekday.js';
-dayjs.extend(weekday);
+//import { DatePicker } from "antd";
+
 
 export default function CreatePostForm() {
   const { data: session } = useSession();
@@ -93,8 +91,8 @@ export default function CreatePostForm() {
         className="border-b border-b-gray-200 hover:border-b-gray-500"
       />
 
-      <DatePicker onChange={setStartDate} placeholder="Start Date" />
-      <DatePicker onChange={setEndDate} placeholder="End Date" />
+      {/* <DatePicker onChange={setStartDate} placeholder="Start Date" />
+      <DatePicker onChange={setEndDate} placeholder="End Date" /> */}
       {startDate && (
         <div>
           <p>Selected Start Date: {startDate.format('YYYY-MM-DD')}</p>
