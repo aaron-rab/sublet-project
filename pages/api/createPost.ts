@@ -7,9 +7,6 @@ export default async function handler(req, res) {
     const { postData } = req.body;
     const { title, description, rent, startDate, endDate } = postData;
 
-    const startDateFormatted = new Date(startDate);
-    const endDateFormatted = new Date(endDate);
-
     const accessToken = req.headers["authorization"];
     const decoded = verifyJwt(accessToken);
 
@@ -27,8 +24,8 @@ export default async function handler(req, res) {
       title,
       description,
       rent: parseInt(rent, 10),
-      startDate: startDateFormatted,
-      endDate: endDateFormatted,
+      startDate: startDate,
+      endDate: endDate,
       user_id: userId,
     });
 

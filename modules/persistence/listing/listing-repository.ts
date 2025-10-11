@@ -1,5 +1,5 @@
 // src/repositories/bookingRepository.ts
-import type { Listing, NewListing } from "../../domain/listing/listing-type";
+import type { Listing, NewListing } from "../../domain/listing/listing";
 import prisma from "../../../helpers/prisma";
 import { toDomainListing, toDBListing, toDBListingFromNewListing } from "./listing-type-converter";
 

@@ -1,12 +1,10 @@
-import prisma from "../../helpers/prisma";
-import type { Listing, NewListing } from "../domain/listing/listing-type";
-import { z } from "zod";
-import { validateListingData } from "../domain/listing/listing";
+import type { Listing, NewListing } from "../domain/listing/listing";
+import { makeNewListingObject } from "../domain/listing/listing";
 import { listingRepository } from "../persistence/listing/listing-repository";
 
 export class ListingService {
-  async create(data: NewListing): Promise<Listing> {
-    const listing = validateListingData(data);
+  async create(data: unknown): Promise<Listing> {
+    const listing = makeNewListingObject(data);
     return listingRepository.create(listing);
   }
 

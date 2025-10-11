@@ -1,7 +1,7 @@
 // converts from Prisma types to domain types
 
 import type { Post as DBListing } from "@prisma/client";
-import type { Listing as DomainListing } from "../../domain/listing/listing-type";
+import type { Listing as DomainListing } from "../../domain/listing/listing";
 
 // they seem to be the same at the moment but this might change in the future
 export const toDomainListing = (dbListing: DBListing): DomainListing => {
