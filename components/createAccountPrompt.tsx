@@ -1,27 +1,27 @@
-'use client';
+// 'use client';
 
-import { createPost } from '../frontend-services/post';
-import { useMutation } from '@tanstack/react-query';
-import { useQuery } from '@tanstack/react-query';
+// import { createPost } from '../frontend-services/post';
+// import { useMutation } from '@tanstack/react-query';
+// import { useQuery } from '@tanstack/react-query';
 
-export default async function CreateAccountPrompt() {
+// export default async function CreateAccountPrompt() {
         
-    // Need to created a function in services
+//     // Need to created a function in services
     
-    const { data, isLoading, isError } = useQuery({
-        queryFn: getAllPosts,
-        queryKey: ["posts"],
-      });
+//     const { data, isLoading, isError } = useQuery({
+//         queryFn: getAllPosts,
+//         queryKey: ["posts"],
+//       });
 
-    if (data?.loggedIn) {
-        console.log("LOGGED IN")
-    } else {
-        console.log("Not Logged In")
-    }
+//     if (data?.loggedIn) {
+//         console.log("LOGGED IN")
+//     } else {
+//         console.log("Not Logged In")
+//     }
     
-    return (
-        <>
-        <p>hi</p>
-        </>
-    )
-}
+//     return (
+//         <>
+//         <p>hi</p>
+//         </>
+//     )
+// }

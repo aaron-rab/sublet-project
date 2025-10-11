@@ -1,11 +1,11 @@
 import prisma from "../../helpers/prisma";
-import { ListingService } from "../../backend-services/listing-services";
+import { ListingService } from "../../modules/backend-services/listing-services";
 
 export default async function handler(req, res) {
     
     try {
         const listingService = new ListingService();
-        const posts = await listingService.getAllWithUser();
+        const posts = await listingService.getAll();
         if (!posts) {
             return res.status(400).json({ message: "Something went wrong while finding posts", result: e, status: 400 })
         }

@@ -1,6 +1,6 @@
 import prisma from "../../helpers/prisma";
 import { verifyJwt } from "../../helpers/jwt";
-import { ListingService } from "../../backend-services/listing-services";
+import { ListingService } from "../../modules/backend-services/listing-services";
 
 export default async function handler(req, res) {
   try {
