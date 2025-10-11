@@ -5,7 +5,7 @@ import LoginForm from "../components/loginForm";
 import RegisterForm from "../components/registerForm";
 import CreateAccountPrompt from "../components/createAccountPrompt";
 
-export default function CreatePost() {
+export default function createPost() {
 
 
   

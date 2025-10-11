@@ -42,15 +42,15 @@ export default function Home(props) {
         </h2>
         <p className={'p-1 mt-9 lg:mt-16 text-lg font-Roboto lg:text-2xl'}>How can we help you?</p>
 
-        <div class={`flex justify-center mt-8 gap-9 md:gap-20 xl:gap-40 lg:mt-14`}>
+        <div className={`flex justify-center mt-8 gap-9 md:gap-20 xl:gap-40 lg:mt-14`}>
           <BigButton href={"/"} text={"I'M SUBLETTING"}/> 
           <BigButton href={"/allPosts"} text={"LOOKING FOR SUBLET"}/>
         </div>
 
         
 
-        <p class={"p-5 mt-8 text-lg lg:mt-20 lg:text-2xl font-Lato"}>We will find you what you want</p>
-        <p class={`text-lg text-lightText font-Roboto`}>
+        <p className={"p-5 mt-8 text-lg lg:mt-20 lg:text-2xl font-Lato"}>We will find you what you want</p>
+        <p className={`text-lg text-lightText font-Roboto`}>
           Made by a Drexel Student that understands the difficulty of the
           subletting process
         </p>
@@ -79,28 +79,28 @@ export default function Home(props) {
 
 
      {/* Here temporarily */}
-      <div class={`flex justify-evenly mt-40`}>
+      <div className={`flex justify-evenly mt-40`}>
           <Link href="/register">
-            <button class={"px-9 py-5 bg-slate-300 rounded-md text-xl"}>
+            <button className={"px-9 py-5 bg-slate-300 rounded-md text-xl"}>
               Register
             </button>
           </Link>
           <Link href="/login">
-            <button class={"px-9 py-5 bg-slate-300 rounded-md text-xl"}>
+            <button className={"px-9 py-5 bg-slate-300 rounded-md text-xl"}>
               Login
             </button>
           </Link>
           
         </div>
 
-        <div class={`${utilStyles.padding25px} ${utilStyles.flexContainer}`}>
-        <Link href="/createPost">
-            <button class={utilStyles.bigButton}>
+        <div className={`${utilStyles.padding25px} ${utilStyles.flexContainer}`}>
+        <Link href="/createListing">
+            <button className={utilStyles.bigButton}>
               Create Listing
             </button>
         </Link>
         <Link href="/allPosts">
-            <button class={utilStyles.bigButton}>
+            <button className={utilStyles.bigButton}>
               View Listings
             </button>
         </Link>

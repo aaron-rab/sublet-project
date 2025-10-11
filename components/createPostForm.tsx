@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { useSession } from "next-auth/react";
-import { createPost } from "../services/post";
+import { createPost } from "../frontend-services/post";
 import { useMutation } from "@tanstack/react-query";
 //import { DatePicker } from "antd";
 import { DayPicker } from 'react-day-picker';
@@ -41,12 +41,14 @@ export default function CreatePostForm() {
     e.preventDefault();
     const post = await mutateAsync({
       accessToken: session?.user.accessToken,
-      postData: {
-        title: title,
-        description: description,
-        startDate: formatDate(startDate),
-        endDate: formatDate(endDate),
-        rent: rent,
+      data: {
+        postData: {
+          title: title,
+          description: description,
+          startDate: formatDate(startDate),
+          endDate: formatDate(endDate),
+          rent: rent,
+        }
       },
     })
       .then((res) => {

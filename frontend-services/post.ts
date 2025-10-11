@@ -18,11 +18,11 @@ export const getAllPosts = () => {
 }
 
 
-export const createPost = ({accessToken, postData}) => {
+export const createPost = ({accessToken, data}) => {
     return new Promise((resolve, reject) => {
         fetch('/api/createPost', {
             method: 'POST',
-            body: JSON.stringify(postData),
+            body: JSON.stringify(data),
             headers: {
                 "Accept": "application/json",
                 "Content-Type": "application/json",

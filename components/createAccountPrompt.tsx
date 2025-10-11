@@ -1,6 +1,6 @@
 'use client';
 
-import { createPost } from '../services/post';
+import { createPost } from '../frontend-services/post';
 import { useMutation } from '@tanstack/react-query';
 import { useQuery } from '@tanstack/react-query';
 

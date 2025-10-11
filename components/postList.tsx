@@ -1,4 +1,4 @@
-import { getAllPosts } from "../services/post";
+import { getAllPosts } from "../frontend-services/post";
 import { useQuery } from "@tanstack/react-query";
 import Post from "./post";
 

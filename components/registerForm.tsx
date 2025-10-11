@@ -1,7 +1,7 @@
 'use client';
  
 import { useState } from 'react';
-import { registerUser } from '../services/auth';
+import { registerUser } from '../frontend-services/auth';
 
 export default function RegisterForm() {
     const [email, setEmail] = useState("");

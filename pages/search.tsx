@@ -6,9 +6,9 @@ export default function Search(props) {
   return (
     <Layout landingPg>
       <Nav />
-      <div class={`${utilStyles.flexContainer}`}>
-        <div class="search-column">
-          <div class="search-option">
+      <div className={`${utilStyles.flexContainer}`}>
+        <div className="search-column">
+          <div className="search-option">
             <h3>Distance</h3>
             <select>
               <option>Select distance</option>
@@ -18,7 +18,7 @@ export default function Search(props) {
               <option>5+ miles</option>
             </select>
           </div>
-          <div class="search-option">
+          <div className="search-option">
             <h3>College</h3>
             <select>
               <option>Select college</option>
@@ -28,8 +28,8 @@ export default function Search(props) {
             </select>
           </div>
         </div>
-        <div class="search-column">
-          <div class="search-option">
+        <div className="search-column">
+          <div className="search-option">
             <h3>Min Price</h3>
             <select>
               <option>Minimum price</option>
@@ -39,7 +39,7 @@ export default function Search(props) {
               <option>$1250</option>
             </select>
           </div>
-          <div class="search-option">
+          <div className="search-option">
             <h3>Max Price</h3>
             <select>
               <option>Maximum price</option>
@@ -50,8 +50,8 @@ export default function Search(props) {
             </select>
           </div>
         </div>
-        <div class="search-column">
-          <div class="search-option">
+        <div className="search-column">
+          <div className="search-option">
             <h3>Start Date</h3>
             <select>
               <option>Start date</option>
@@ -61,7 +61,7 @@ export default function Search(props) {
               <option>April 2024</option>
             </select>
           </div>
-          <div class="search-option">
+          <div className="search-option">
             <h3>End Date</h3>
             <select>
               <option>End date</option>
@@ -72,8 +72,8 @@ export default function Search(props) {
             </select>
           </div>
         </div>
-        <div class="search-column">
-          <div class="search-option">
+        <div className="search-column">
+          <div className="search-option">
             <h3>Roommates</h3>
             <select>
               <option>Select preference</option>
