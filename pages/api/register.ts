@@ -4,7 +4,7 @@ import * as bcrypt from 'bcrypt';
 export default async function handler(req, res) {
     
     try {
-        const { email, password } = req.body
+         const { username, email, password } = req.body
 
         if (!email || !password) {
             return res.status(400).json({ message: "Both fields are required", status: 400 })
@@ -12,6 +12,7 @@ export default async function handler(req, res) {
 
         const user = await prisma.user.create({
             data: {
+                username,
                 email: email.toLowerCase(),
                 password: await bcrypt.hash(password, 10)
             }

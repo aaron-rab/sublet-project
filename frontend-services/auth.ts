@@ -1,10 +1,10 @@
 //keeps all functions used for authentication
 
-export const registerUser = (email, password) => {
+export const registerUser = (username, email, password) => {
     return new Promise((resolve, reject) => {
         fetch(`/api/register`, {
             method: 'POST',
-            body: JSON.stringify({ email, password }),
+            body: JSON.stringify({ username, email, password }),
             headers: {
                 "Accept": "application/json",
                 "Content-Type": "application/json",

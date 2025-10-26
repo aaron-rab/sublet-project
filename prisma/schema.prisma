@@ -8,20 +8,22 @@ datasource db {
 }
 
 model Post {
-  id          Int    @id @default(autoincrement())
-  title       String
-  description String
-  rent        Int
-  startDate   DateTime
-  endDate     DateTime
+  id           Int      @id @default(autoincrement())
+  title        String
+  user_id      Int
+  description  String
+  rent         Int
   creationDate DateTime @default(now())
-  user_id     Int
-  User        User   @relation(fields: [user_id], references: [id])
+  endDate      DateTime
+  startDate    DateTime
+  User         User     @relation(fields: [user_id], references: [id])
 }
 
 model User {
   id       Int    @id @default(autoincrement())
+  username String @unique 
   email    String @unique
   password String
-  Post     Post[]
+  creationDate DateTime @default(now())
 }
+// shud remve pst array nt needed

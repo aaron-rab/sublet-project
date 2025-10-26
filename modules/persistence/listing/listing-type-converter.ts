@@ -1,7 +1,7 @@
 // converts from Prisma types to domain types
 
 import type { Post as DBListing } from "@prisma/client";
-import type { Listing as DomainListing } from "../../domain/listing/listing";
+import type { Listing as DomainListing, NewListing as DomainNewListing } from "../../domain/listing/listing";
 
 // they seem to be the same at the moment but this might change in the future
 export const toDomainListing = (dbListing: DBListing): DomainListing => {
@@ -31,7 +31,7 @@ export const toDBListing = (domainListing: DomainListing): DBListing => {
 };
 
 export const toDBListingFromNewListing = (
-  domainListing: Omit<DomainListing, "id" | "creationDate">
+  domainListing: DomainNewListing
 ): Omit<DBListing, "id" | "creationDate"> => {
   return {
     title: domainListing.title,
